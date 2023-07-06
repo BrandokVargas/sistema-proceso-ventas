@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Prceso de Ventas</title>
+
+     
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    
+     <style>
+    .dropdown-menu {
+      display: none;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper"> 
+  
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">PROCESO DE VENTAS</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Inicio</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading text-xl">
+                MANTENEDORES
+            </div>
+
+            
+            <hr class="sidebar-divider">
+            
+            <div class="dropdown w-100 p-3">
+              <a
+                class="btn btn-primary dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Clientes
+              </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" th:href="@{/clientes}">Ver Clientes</a></li>
+                <li><a class="dropdown-item" th:href="@{/add-cliente}">Agregar Clientes</a></li>
+              </ul>
+            </div>
+
+            
+            
+            <div class="dropdown w-100 p-3">
+              <a
+                class="btn btn-primary dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Empleados
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" th:href="@{/empleados}">Ver Empleados</a></li>
+                <li><a class="dropdown-item" th:href="@{/add-empleado}">Agregar Emepleados</a></li>
+              </ul>
+            </div>
+            
+              <div class="dropdown w-100 p-3">
+              <a
+                class="btn btn-primary dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Producto
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" th:href="@{/productos}">Ver Producto</a></li>
+                <li><a class="dropdown-item" th:href="@{/add-producto}">Agregar Producto</a></li>
+              </ul>
+            </div>      
+            
+                        <div class="dropdown w-100 p-3">
+              <a
+                class="btn btn-primary dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categoria
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" th:href="@{/categorias}">Ver Categorias</a></li>
+                <li><a class="dropdown-item" th:href="@{/add-categoria}">Agregar Categoria</a></li>
+              </ul>
+            </div>
+        </ul>
+        
+        
+        
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </nav>
+                
+                
+                
+                 <!-- FORMULARIO -->
+                 
+                 <div class="container">
+
+                    <nav class="navbar bg-body-tertiary">
+                        <div class="container-fluid">
+                            <a class="navbar-brand text-uppercase" href="#">
+                                Agregar nuevo Producto
+                            </a>
+                        </div>
+                    </nav>
+
+                    <hr>
+
+                    <form action="/add-producto" method="post" class="row g-3 text-lg text-uppercase">
+
+
+                        <div class="col-md-6 mt-3">
+                            <label for="inputNombre" class="form-label">Nombre del producto</label>
+                            <input type="text" class="form-control" name="prodname" id="inputNombre" placeholder="Ej: Casaca versage" required="required">
+                        </div>
+
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">Categoria</label>
+                            <select name="categoria" class="form-control" required="required">
+                                <option value="" selected disabled>Seleccione</option>
+                                <option th:each="cat : ${categoriap}" th:value="${cat.idCategoria}" th:text="${cat.nombre}"></option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 mt-3">
+                            <label for="inputDNI" class="form-label">Precio</label>
+                            <input type="text" class="form-control" name="prodpre" id="inputDNI" placeholder="Ej: 200" required="required">
+                        </div>
+
+                        <div class="col-md-6 mt-3">
+                            <label for="inputCelular" class="form-label">Stock</label>
+                            <input type="text" class="form-control" name="stock" id="inputCelular" placeholder="Ej: 100" required="required">
+                        </div>
+                       
+                        
+                        <div class="col-12 mt-3">
+                            <button type="submit" class="btn btn-primary">Registrar Producto</button>
+                        </div>
+
+                    </form>
+            </div>
+                 
+
+ 
+                 <!-- Close -->
+                 
+        </div>
+
+    </div>
+
+     
+        
+</body>
+
+</html>

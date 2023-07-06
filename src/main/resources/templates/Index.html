@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Prceso de Ventas</title>
+
+     
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    
+     <style>
+    .dropdown-menu {
+      display: none;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper"> 
+  
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">PROCESO DE VENTAS</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Inicio</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading text-xl">
+                MANTENEDORES
+            </div>
+
+            
+            <hr class="sidebar-divider">
+            
+            <div class="dropdown w-100 p-3">
+              <a
+                class="btn btn-primary dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Clientes
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" th:href="@{/clientes}">Ver Clientes</a></li>
+                <li><a class="dropdown-item" th:href="@{/add-cliente}">Agregar Clientes</a></li>
+              </ul>
+            </div>
+
+            
+            
+            <div class="dropdown w-100 p-3">
+              <a
+                class="btn btn-primary dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Empleados
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" th:href="@{/empleados}">Ver Empleado</a></li>
+                <li><a class="dropdown-item" th:href="@{/add-empleado}">Agregar Empleado</a></li>
+              </ul>
+            </div>
+            
+              <div class="dropdown w-100 p-3">
+              <a
+                class="btn btn-primary dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Producto
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" th:href="@{/productos}">Ver Producto</a></li>
+                <li><a class="dropdown-item" th:href="@{/add-producto}">Agregar Producto</a></li>
+              </ul>
+            </div>      
+            
+            <div class="dropdown w-100 p-3">
+              <a
+                class="btn btn-primary dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categoria
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" th:href="@{/categorias}">Ver Categorias</a></li>
+                <li><a class="dropdown-item" th:href="@{/add-categoria}">Agregar Categoria</a></li>
+              </ul>
+            </div>
+        </ul>
+        
+        
+        
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <h2 class="m-2">Verky Store</h2>
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+
+
+               
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Inicio</h1>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                               Agrega tus clientes favoritos</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> <a class="text-xl font-weight-bold text-gray-800 text-uppercase mb-1" th:href="@{/add-cliente}">Agregar Clientes</a> </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                               Agrega tus Empleados favoritos</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> <a class="text-xl font-weight-bold text-gray-800 text-uppercase mb-1" th:href="@{/add-empleado}">Registra a tus empleados </a> </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                               Agrega tus Productos favoritos</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> <a class="text-xl font-weight-bold text-gray-800 text-uppercase mb-1" th:href="@{/add-producto}">Agrega tus productos</a> </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                               Agrega tus Categorias favoritas</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> <a class="text-xl font-weight-bold text-gray-800 text-uppercase mb-1" th:href="@{/add-categoria}">Añade tus categorias</a> </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+
+                </div>
+
+            </div> 
+
+ 
+                
+                <hr class="border-primary">
+                
+                
+                <div class="container mt-lg-5">
+                    <h2 class="text-gray-800">Area de ventas</h2>
+                      <div class="row-xl-2 row-md-1 mt-lg-5">
+                          
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                               Añade las ventas</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> <a class="text-xl font-weight-bold text-gray-800 text-uppercase mb-1" th:href="@{/add-venta}">Realizar Venta</a> </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                          
+                           
+                            <div class="card border-left-primary shadow h-100 py-2 mt-4">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                               Ver las ventas</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> <a class="text-xl font-weight-bold text-gray-800 text-uppercase mb-1" th:href="@{/ventas}">Ver las ventas</a> </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>             
+                </div>
+                
+                
+                <div class="container mt-lg-5">
+                    <h2 class="text-gray-800">Detalle de ventas</h2>
+                    
+                    <div class="row ">
+                        <div class="col-xl-6 row-md-6 mt-lg-5 ">                   
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                               Revisa tus ventas por fechas</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> <a class="text-xl font-weight-bold text-gray-800 text-uppercase mb-1" th:href="@{/ganancias-dia}">Ver mis detalles</a> </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     
+                        </div>     
+                            
+                        <div class="col-xl-6 row-md-6 mt-lg-5">                   
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                               Reportes</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> <a class="text-xl font-weight-bold text-gray-800 text-uppercase mb-1" th:href="@{/reportes}">Reportes</a> </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     
+                        </div>         
+                      
+                    </div>
+                         
+                            
+                </div>
+                    
+                
+        </div>
+
+    </div>
+
+     
+        
+</body>
+
+</html>
