@@ -13,4 +13,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ICategoria extends CrudRepository<Categoria,Integer>{
     
+   
+    
+    
 }

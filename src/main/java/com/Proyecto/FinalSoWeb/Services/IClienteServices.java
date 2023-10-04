@@ -2,6 +2,7 @@
 package com.Proyecto.FinalSoWeb.Services;
 
 import com.Proyecto.FinalSoWeb.Models.Cliente;
+import java.awt.print.Pageable;
 import java.util.List;
 import java.util.Optional;
 
